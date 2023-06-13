@@ -1,3 +1,5 @@
+# syntax=docker/dockerfile:1.3
+
 # Make sure it matches the Ruby version in .ruby-version and Gemfile
 ARG RUBY_VERSION=3.1.2-slim
 FROM ruby:$RUBY_VERSION
