@@ -10,8 +10,6 @@ RUN apt-get update -qq && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /usr/share/doc /usr/share/man
 
-RUN
-
 # Rails app lives here
 WORKDIR /rails
 
