@@ -6,6 +6,11 @@ class User < ApplicationRecord
 
          has_many :messages
          has_many :rooms
+         has_many :posts
 
          broadcasts_to ->(room) { :users}
+  
+    def username
+      email.split("@").first
+    end
 end

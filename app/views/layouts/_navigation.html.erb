@@ -1,0 +1,23 @@
+ <nav>
+     <a href="/">Home</a>
+     <a href="/about">About</a>
+     <%= link_to "Posts", posts_path %>
+     <% if current_user %>
+        <%= link_to "My posts", user_posts_path  %>
+     <% end %>
+     
+     <a href="#">Contact</a>
+     <div class="dropdown">
+         <% if current_user %>
+         <%= link_to "New Post", new_post_path  %>
+         <button class="dropbtn"><%= current_user.email %></button>
+         <div class="dropdown-content">
+             <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+         </div>
+         <% else %>
+            <%= link_to "Sign in", new_user_session_path %>
+            <%= link_to "Sign up", new_user_registration_path %>
+         <% end %>
+
+     </div>
+ </nav>
