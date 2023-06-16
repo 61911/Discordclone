@@ -4,13 +4,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-         has_many :messages
-         has_many :rooms
-         has_many :posts
+  has_many :messages
+  has_many :rooms
+  has_many :posts
 
-         broadcasts_to ->(room) { :users}
-  
-    def username
-      email.split("@").first
-    end
+  broadcasts_to ->(_room) { :users }
+
+  def username
+    email.split('@').first
+  end
 end

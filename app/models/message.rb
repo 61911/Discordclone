@@ -1,5 +1,5 @@
 class Message < ApplicationRecord
   belongs_to :user
   belongs_to :room
-  broadcasts_to ->(room) { :message_list}
+  broadcasts_to ->(_room) { :message_list }
 end
